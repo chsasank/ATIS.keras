@@ -68,7 +68,7 @@ for i in range(n_epochs):
         label = np.eye(n_classes)[label][np.newaxis,:]
         sent = sent[np.newaxis,:]
         
-        if sent.shape[1] > 1:
+        if sent.shape[1] > 1: #some bug in keras
             loss = model.train_on_batch(sent, label)
             avgLoss += loss
 
@@ -95,7 +95,7 @@ for i in range(n_epochs):
         label = np.eye(n_classes)[label][np.newaxis,:]
         sent = sent[np.newaxis,:]
         
-        if sent.shape[1] > 1:
+        if sent.shape[1] > 1: #some bug in keras
             loss = model.test_on_batch(sent, label)
             avgLoss += loss
 
