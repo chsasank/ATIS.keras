@@ -62,7 +62,7 @@ for i in range(n_epochs):
     train_pred_label = []
     avgLoss = 0
     	
-    bar = progressbar.ProgressBar(max_value=len(train_x))
+    bar = progressbar.ProgressBar(maxval=len(train_x))
     for n_batch, sent in bar(enumerate(train_x)):
         label = train_label[n_batch]
         label = np.eye(n_classes)[label][np.newaxis,:]
@@ -89,7 +89,7 @@ for i in range(n_epochs):
     val_pred_label = []
     avgLoss = 0
     
-    bar = progressbar.ProgressBar(max_value=len(val_x))
+    bar = progressbar.ProgressBar(maxval=len(val_x))
     for n_batch, sent in bar(enumerate(val_x)):
         label = val_label[n_batch]
         label = np.eye(n_classes)[label][np.newaxis,:]
